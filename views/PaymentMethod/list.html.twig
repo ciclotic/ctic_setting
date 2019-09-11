@@ -1,0 +1,13 @@
+{% extends "/Crud/list.html.twig" %}
+
+{% block title %}- Listado métodos de pago{% endblock %}
+
+{% block description %}Listado de métodos de pago.{% endblock %}
+
+{% block content %}
+    <div class="container-fluid index-{{ metadata.name|lower }}">
+        {% include '/PaymentMethod/List/_header.html.twig' %}
+
+        {% include '/Crud/List/_content.html.twig' %}
+    </div>
+{% endblock %}

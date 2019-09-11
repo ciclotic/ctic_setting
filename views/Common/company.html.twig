@@ -1,0 +1,14 @@
+<form action="http://config.olimpoapp.local/cambiar-empresa" id="switchCompany" method="post">
+    <div class="form-group">
+        <label for="predefined" class="col-md-12 control-label">Empresa</label>
+        <div class="col-md-12">
+            <select id="switchCompanySelect" name="id" class="form-control">
+                {% set defaultCompany = configuration.request.session.get('company') %}
+                {% set companies = configuration.request.session.get('companies') %}
+                {% for company in companies %}
+                    <option {% if defaultCompany.id == company.id %}selected{% endif %} value="{{ company.id }}">{{ company.businessName }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+</form>

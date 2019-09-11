@@ -1,0 +1,38 @@
+Warehouse,Warehouse
+Customer,Customer
+Account,Account
+Bank,Bank
+Company,Company
+Dashboard,Dashboard
+Irpf,Irpf
+Iva,Iva
+Origin,Origin
+PaymentMethod,Payment Method
+PaymentMethodExpire,Payment Method Expire
+Permission,Permission
+Privacy,Privacy
+Rate,Rate
+RealizationArea,Realization Area
+System,System
+User,User
+Device,Device
+Employee,Employee
+EmployeeArea,Employee Area
+EmployeeAttached,Employee Attached
+EmployeeCategory,Employee Category
+EmployeeGrowth,Employee Growth
+EmployeeLow,Employee Low
+EmployeePersonalAffairs,Employee Personal Affairs
+Event,Event
+EventEmployee,Event Employee
+Fichar,Fichar
+Report,Report
+Attribute,Attribute
+Option,Option
+Product,Product
+ProductDevice,Product Device
+ProductObservation,Product Observation
+ProductVariant,Product Variant
+ProductVariantComposed,Product Variant Composed
+ProductVariantComposedComplement,Product Variant Composed Complement
+ProductVariantRate,Product Variant Rate

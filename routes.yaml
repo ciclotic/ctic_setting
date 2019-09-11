@@ -1,0 +1,534 @@
+dashboard:
+    path:     /
+    defaults:
+        _controller: 'CTIC\App\Dashboard\Infrastructure\DashboardController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\App\Dashboard\Application\CreateDashboardController'
+
+login:
+    path:     /login
+    defaults:
+        _controller: 'CTIC\App\User\Infrastructure\LoginController'
+        _controller_method: 'loginAction'
+        _controller_create: 'CTIC\App\User\Application\CreateLoginController'
+
+logout:
+    path:     /logout
+    defaults:
+        _controller: 'CTIC\App\User\Infrastructure\LoginController'
+        _controller_method: 'logoutAction'
+        _controller_create: 'CTIC\App\User\Application\CreateLoginController'
+
+cambiar_empresa:
+    path:     /cambiar-empresa/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\Company\Infrastructure\Controller\CompanyController'
+        _controller_method: 'switchAction'
+        _controller_create: 'CTIC\App\Company\Application\CreateCompanyController'
+
+#Users
+
+GET_usuarios_listado:
+    path:     /usuarios/listado
+    defaults:
+        _controller: 'CTIC\App\User\Infrastructure\UserController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\App\User\Application\CreateUserController'
+
+GET_usuarios_mostrar:
+    path:     /usuarios/mostrar/{id}
+    defaults:
+        _controller: 'CTIC\App\User\Infrastructure\UserController'
+        _controller_method: 'showAction'
+        _controller_create: 'CTIC\App\User\Application\CreateUserController'
+
+GET_usuarios_crear:
+    path:     /usuarios/crear
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\User\Infrastructure\UserController'
+        _controller_method: 'createAction'
+        _controller_create: 'CTIC\App\User\Application\CreateUserController'
+
+GET_usuarios_modificar:
+    path:     /usuarios/modificar/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\User\Infrastructure\UserController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\App\User\Application\CreateUserController'
+
+POST_usuarios_eliminar:
+    path:     /usuarios/eliminar/{id}
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\User\Infrastructure\UserController'
+        _controller_method: 'deleteAction'
+        _controller_create: 'CTIC\App\User\Application\CreateUserController'
+
+POST_usuarios_eliminargrupo:
+    path:     /usuarios/eliminargrupo
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\User\Infrastructure\UserController'
+        _controller_method: 'bulkDeleteAction'
+        _controller_create: 'CTIC\App\User\Application\CreateUserController'
+
+#System
+
+GET_sistema_modificar:
+    path:     /sistema/modificar
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\System\Infrastructure\SystemController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\App\System\Application\CreateSystemController'
+
+#Company
+
+GET_empresas_listado:
+    path:     /empresas/listado
+    defaults:
+        _controller: 'CTIC\App\Company\Infrastructure\CompanyController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\App\Company\Application\CreateCompanyController'
+
+GET_empresas_mostrar:
+    path:     /empresas/mostrar/{id}
+    defaults:
+        _controller: 'CTIC\App\Company\Infrastructure\CompanyController'
+        _controller_method: 'showAction'
+        _controller_create: 'CTIC\App\Company\Application\CreateCompanyController'
+
+GET_empresas_crear:
+    path:     /empresas/crear
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\Company\Infrastructure\CompanyController'
+        _controller_method: 'createAction'
+        _controller_create: 'CTIC\App\Company\Application\CreateCompanyController'
+
+GET_empresas_modificar:
+    path:     /empresas/modificar/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\Company\Infrastructure\CompanyController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\App\Company\Application\CreateCompanyController'
+
+POST_empresas_eliminar:
+    path:     /empresas/eliminar/{id}
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Company\Infrastructure\CompanyController'
+        _controller_method: 'deleteAction'
+        _controller_create: 'CTIC\App\Company\Application\CreateCompanyController'
+
+POST_empresas_eliminargrupo:
+    path:     /empresas/eliminargrupo
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Company\Infrastructure\CompanyController'
+        _controller_method: 'bulkDeleteAction'
+        _controller_create: 'CTIC\App\Company\Application\CreateCompanyController'
+
+POST_empresas_descargar:
+    path:     /empresas/descargar
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Company\Infrastructure\CompanyController'
+        _controller_method: 'downloadAction'
+        _controller_create: 'CTIC\App\Company\Application\CreateCompanyController'
+
+#Iva
+
+GET_iva_listado:
+    path:     /iva/listado
+    defaults:
+        _controller: 'CTIC\App\Iva\Infrastructure\IvaController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\App\Iva\Application\CreateIvaController'
+
+GET_iva_mostrar:
+    path:     /iva/mostrar/{id}
+    defaults:
+        _controller: 'CTIC\App\Iva\Infrastructure\IvaController'
+        _controller_method: 'showAction'
+        _controller_create: 'CTIC\App\Iva\Application\CreateIvaController'
+
+GET_iva_crear:
+    path:     /iva/crear
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\Iva\Infrastructure\IvaController'
+        _controller_method: 'createAction'
+        _controller_create: 'CTIC\App\Iva\Application\CreateIvaController'
+
+GET_iva_modificar:
+    path:     /iva/modificar/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\Iva\Infrastructure\IvaController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\App\Iva\Application\CreateIvaController'
+
+POST_iva_eliminar:
+    path:     /iva/eliminar/{id}
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Iva\Infrastructure\IvaController'
+        _controller_method: 'deleteAction'
+        _controller_create: 'CTIC\App\Iva\Application\CreateIvaController'
+
+POST_iva_eliminargrupo:
+    path:     /iva/eliminargrupo
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Iva\Infrastructure\IvaController'
+        _controller_method: 'bulkDeleteAction'
+        _controller_create: 'CTIC\App\Iva\Application\CreateIvaController'
+
+POST_iva_descargar:
+    path:     /iva/descargar
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Iva\Infrastructure\IvaController'
+        _controller_method: 'downloadAction'
+        _controller_create: 'CTIC\App\Iva\Application\CreateIvaController'
+
+#Irpf
+
+GET_irpf_listado:
+    path:     /irpf/listado
+    defaults:
+        _controller: 'CTIC\App\Irpf\Infrastructure\IrpfController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\App\Irpf\Application\CreateIrpfController'
+
+GET_irpf_mostrar:
+    path:     /irpf/mostrar/{id}
+    defaults:
+        _controller: 'CTIC\App\Irpf\Infrastructure\IrpfController'
+        _controller_method: 'showAction'
+        _controller_create: 'CTIC\App\Irpf\Application\CreateIrpfController'
+
+GET_irpf_crear:
+    path:     /irpf/crear
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\Irpf\Infrastructure\IrpfController'
+        _controller_method: 'createAction'
+        _controller_create: 'CTIC\App\Irpf\Application\CreateIrpfController'
+
+GET_irpf_modificar:
+    path:     /irpf/modificar/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\Irpf\Infrastructure\IrpfController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\App\Irpf\Application\CreateIrpfController'
+
+POST_irpf_eliminar:
+    path:     /irpf/eliminar/{id}
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Irpf\Infrastructure\IrpfController'
+        _controller_method: 'deleteAction'
+        _controller_create: 'CTIC\App\Irpf\Application\CreateIrpfController'
+
+POST_irpf_eliminargrupo:
+    path:     /irpf/eliminargrupo
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Irpf\Infrastructure\IrpfController'
+        _controller_method: 'bulkDeleteAction'
+        _controller_create: 'CTIC\App\Irpf\Application\CreateIrpfController'
+
+POST_irpf_descargar:
+    path:     /irpf/descargar
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Irpf\Infrastructure\IrpfController'
+        _controller_method: 'downloadAction'
+        _controller_create: 'CTIC\App\Irpf\Application\CreateIrpfController'
+
+#Rate
+
+GET_tarifas_listado:
+    path:     /tarifas/listado
+    defaults:
+        _controller: 'CTIC\App\Rate\Infrastructure\RateController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\App\Rate\Application\CreateRateController'
+
+GET_tarifas_mostrar:
+    path:     /tarifas/mostrar/{id}
+    defaults:
+        _controller: 'CTIC\App\Rate\Infrastructure\RateController'
+        _controller_method: 'showAction'
+        _controller_create: 'CTIC\App\Rate\Application\CreateRateController'
+
+GET_tarifas_crear:
+    path:     /tarifas/crear
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\Rate\Infrastructure\RateController'
+        _controller_method: 'createAction'
+        _controller_create: 'CTIC\App\Rate\Application\CreateRateController'
+
+GET_tarifas_modificar:
+    path:     /tarifas/modificar/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\Rate\Infrastructure\RateController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\App\Rate\Application\CreateRateController'
+
+POST_tarifas_eliminar:
+    path:     /tarifas/eliminar/{id}
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Rate\Infrastructure\RateController'
+        _controller_method: 'deleteAction'
+        _controller_create: 'CTIC\App\Rate\Application\CreateRateController'
+
+POST_tarifas_eliminargrupo:
+    path:     /tarifas/eliminargrupo
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Rate\Infrastructure\RateController'
+        _controller_method: 'bulkDeleteAction'
+        _controller_create: 'CTIC\App\Rate\Application\CreateRateController'
+
+POST_tarifas_descargar:
+    path:     /tarifas/descargar
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Rate\Infrastructure\RateController'
+        _controller_method: 'downloadAction'
+        _controller_create: 'CTIC\App\Rate\Application\CreateRateController'
+
+#RealizationArea
+
+GET_zonas_listado:
+    path:     /zonas/listado
+    defaults:
+        _controller: 'CTIC\App\RealizationArea\Infrastructure\RealizationAreaController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\App\RealizationArea\Application\CreateRealizationAreaController'
+
+GET_zonas_mostrar:
+    path:     /zonas/mostrar/{id}
+    defaults:
+        _controller: 'CTIC\App\RealizationArea\Infrastructure\RealizationAreaController'
+        _controller_method: 'showAction'
+        _controller_create: 'CTIC\App\RealizationArea\Application\CreateRealizationAreaController'
+
+GET_zonas_crear:
+    path:     /zonas/crear
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\RealizationArea\Infrastructure\RealizationAreaController'
+        _controller_method: 'createAction'
+        _controller_create: 'CTIC\App\RealizationArea\Application\CreateRealizationAreaController'
+
+GET_zonas_modificar:
+    path:     /zonas/modificar/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\RealizationArea\Infrastructure\RealizationAreaController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\App\RealizationArea\Application\CreateRealizationAreaController'
+
+POST_zonas_eliminar:
+    path:     /zonas/eliminar/{id}
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\RealizationArea\Infrastructure\RealizationAreaController'
+        _controller_method: 'deleteAction'
+        _controller_create: 'CTIC\App\RealizationArea\Application\CreateRealizationAreaController'
+
+POST_zonas_eliminargrupo:
+    path:     /zonas/eliminargrupo
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\RealizationArea\Infrastructure\RealizationAreaController'
+        _controller_method: 'bulkDeleteAction'
+        _controller_create: 'CTIC\App\RealizationArea\Application\CreateRealizationAreaController'
+
+POST_zonas_descargar:
+    path:     /zonas/descargar
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\RealizationArea\Infrastructure\RealizationAreaController'
+        _controller_method: 'downloadAction'
+        _controller_create: 'CTIC\App\RealizationArea\Application\RealizationAreaController'
+
+#Origin
+
+GET_procedencias_listado:
+    path:     /procedencias/listado
+    defaults:
+        _controller: 'CTIC\App\Origin\Infrastructure\OriginController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\App\Origin\Application\CreateOriginController'
+
+GET_procedencias_mostrar:
+    path:     /procedencias/mostrar/{id}
+    defaults:
+        _controller: 'CTIC\App\Origin\Infrastructure\OriginController'
+        _controller_method: 'showAction'
+        _controller_create: 'CTIC\App\Origin\Application\CreateOriginController'
+
+GET_procedencias_crear:
+    path:     /procedencias/crear
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\Origin\Infrastructure\OriginController'
+        _controller_method: 'createAction'
+        _controller_create: 'CTIC\App\Origin\Application\CreateOriginController'
+
+GET_procedencias_modificar:
+    path:     /procedencias/modificar/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\Origin\Infrastructure\OriginController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\App\Origin\Application\CreateOriginController'
+
+POST_procedencias_eliminar:
+    path:     /procedencias/eliminar/{id}
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Origin\Infrastructure\OriginController'
+        _controller_method: 'deleteAction'
+        _controller_create: 'CTIC\App\Origin\Application\CreateOriginController'
+
+POST_procedencias_eliminargrupo:
+    path:     /procedencias/eliminargrupo
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Origin\Infrastructure\OriginController'
+        _controller_method: 'bulkDeleteAction'
+        _controller_create: 'CTIC\App\Origin\Application\CreateOriginController'
+
+POST_procedencias_descargar:
+    path:     /procedencias/descargar
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Origin\Infrastructure\OriginController'
+        _controller_method: 'downloadAction'
+        _controller_create: 'CTIC\App\Origin\Application\CreateOriginController'
+
+#Bank
+
+GET_bancos_listado:
+    path:     /bancos/listado
+    defaults:
+        _controller: 'CTIC\App\Bank\Infrastructure\BankController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\App\Bank\Application\CreateBankController'
+
+GET_bancos_mostrar:
+    path:     /bancos/mostrar/{id}
+    defaults:
+        _controller: 'CTIC\App\Bank\Infrastructure\BankController'
+        _controller_method: 'showAction'
+        _controller_create: 'CTIC\App\Bank\Application\CreateBankController'
+
+GET_bancos_crear:
+    path:     /bancos/crear
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\Bank\Infrastructure\BankController'
+        _controller_method: 'createAction'
+        _controller_create: 'CTIC\App\Bank\Application\CreateBankController'
+
+GET_bancos_modificar:
+    path:     /bancos/modificar/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\Bank\Infrastructure\BankController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\App\Bank\Application\CreateBankController'
+
+POST_bancos_eliminar:
+    path:     /bancos/eliminar/{id}
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Bank\Infrastructure\BankController'
+        _controller_method: 'deleteAction'
+        _controller_create: 'CTIC\App\Bank\Application\CreateBankController'
+
+POST_bancos_eliminargrupo:
+    path:     /bancos/eliminargrupo
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Bank\Infrastructure\BankController'
+        _controller_method: 'bulkDeleteAction'
+        _controller_create: 'CTIC\App\Bank\Application\CreateBankController'
+
+POST_bancos_descargar:
+    path:     /bancos/descargar
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\Bank\Infrastructure\BankController'
+        _controller_method: 'downloadAction'
+        _controller_create: 'CTIC\App\Bank\Application\CreateBankController'
+
+#PaymentMethod
+
+GET_metodospago_listado:
+    path:     /metodospago/listado
+    defaults:
+        _controller: 'CTIC\App\PaymentMethod\Infrastructure\PaymentMethodController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\App\PaymentMethod\Application\CreatePaymentMethodController'
+
+GET_metodospago_mostrar:
+    path:     /metodospago/mostrar/{id}
+    defaults:
+        _controller: 'CTIC\App\PaymentMethod\Infrastructure\PaymentMethodController'
+        _controller_method: 'showAction'
+        _controller_create: 'CTIC\App\PaymentMethod\Application\CreatePaymentMethodController'
+
+GET_metodospago_crear:
+    path:     /metodospago/crear
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\PaymentMethod\Infrastructure\PaymentMethodController'
+        _controller_method: 'createAction'
+        _controller_create: 'CTIC\App\PaymentMethod\Application\CreatePaymentMethodController'
+
+GET_metodospago_modificar:
+    path:     /metodospago/modificar/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\App\PaymentMethod\Infrastructure\PaymentMethodController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\App\PaymentMethod\Application\CreatePaymentMethodController'
+
+POST_metodospago_eliminar:
+    path:     /metodospago/eliminar/{id}
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\PaymentMethod\Infrastructure\PaymentMethodController'
+        _controller_method: 'deleteAction'
+        _controller_create: 'CTIC\App\PaymentMethod\Application\CreatePaymentMethodController'
+
+POST_metodospago_eliminargrupo:
+    path:     /metodospago/eliminargrupo
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\PaymentMethod\Infrastructure\PaymentMethodController'
+        _controller_method: 'bulkDeleteAction'
+        _controller_create: 'CTIC\App\PaymentMethod\Application\CreatePaymentMethodController'
+
+POST_metodospago_descargar:
+    path:     /metodospago/descargar
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\App\PaymentMethod\Infrastructure\PaymentMethodController'
+        _controller_method: 'downloadAction'
+        _controller_create: 'CTIC\App\PaymentMethod\Application\CreatePaymentMethodController'

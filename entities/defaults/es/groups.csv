@@ -1,0 +1,8 @@
+Todo,Warehouse;Customer;Account;Bank;Company;Dashboard;Irpf;Iva;Origin;PaymentMethod;PaymentMethodExpire;Permission;Privacy;Rate;RealizationArea;System;User;Device;Employee;EmployeeArea;EmployeeAttached;EmployeeCategory;EmployeeGrowth;EmployeeLow;EmployeePersonalAffairs;Event;EventEmployee;Fichar;Report;Attribute;Option;Product;ProductDevice;ProductObservation;ProductVariant;ProductVariantComposed;ProductVariantComposedComplement;ProductVariantRate
+Alamacén,Warehouse
+Cliente,Customer
+Configuración,Account;Bank;Company;Dashboard;Irpf;Iva;Origin;PaymentMethod;PaymentMethodExpire;Permission;Privacy;Rate;RealizationArea;System;User
+Dispositivo,Device
+RRHH,Employee;EmployeeArea;EmployeeAttached;EmployeeCategory;EmployeeGrowth;EmployeeLow;EmployeePersonalAffairs;Event;EventEmployee;Fichar;Report
+Empleado,Fichar
+Producto,Attribute;Option;Product;ProductDevice;ProductObservation;ProductVariant;ProductVariantComposed;ProductVariantComposedComplement;ProductVariantRate

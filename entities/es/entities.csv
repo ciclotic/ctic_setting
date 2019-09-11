@@ -1,0 +1,38 @@
+Warehouse,Almacén
+Customer,Cliente
+Account,Cuenta
+Bank,Banco
+Company,Empresa
+Dashboard,Dashboard
+Irpf,Irpf
+Iva,Iva
+Origin,Origen
+PaymentMethod,Método de pago
+PaymentMethodExpire,Expiración del método de pago
+Permission,Permiso
+Privacy,Privacidad
+Rate,Tarifa
+RealizationArea,Área de realización
+System,Sistema
+User,Usuario
+Device,Dispositivo
+Employee,Empleado
+EmployeeArea,Área de empleado
+EmployeeAttached,Fichero adjunto de empleado
+EmployeeCategory,Categoría de empleado
+EmployeeGrowth,Novación contractual de empleado
+EmployeeLow,Baja de empleado
+EmployeePersonalAffairs,Días de asuntos propios de empleados
+Event,Evento
+EventEmployee,Empleados de evento
+Fichar,Fichar
+Report,Report
+Attribute,Atributo
+Option,Opción
+Product,Producto
+ProductDevice,Dispositivo de producto
+ProductObservation,Observación de producto
+ProductVariant,Variante de producto
+ProductVariantComposed,Variante de producto compuesta
+ProductVariantComposedComplement,Complemento de variante de producto compuesta
+ProductVariantRate,Tarifa de variante de producto

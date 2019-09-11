@@ -1,0 +1,104 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Nombre fiscal</label>
+                {{ resource.taxName }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Nombre del administrador</label>
+                {{ resource.administratorName }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Nombre comercial</label>
+                {{ resource.businessName }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>CIF / NIF</label>
+                {{ resource.taxIdentification }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>DNI del administrador</label>
+                {{ resource.administratorIdentification }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>CCC</label>
+                {{ resource.ccc }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Dirección</label>
+                {{ resource.address }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Código postal</label>
+                {{ resource.postalCode }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Ciudad o Población</label>
+                {{ resource.town }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>País</label>
+                {{ resource.country }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Email del SMTP</label>
+                {{ resource.smtpEmail }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Host del SMTP</label>
+                {{ resource.smtpHost }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Alias del remitente del correo</label>
+                {{ resource.smtpAliasName }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label>Iva incluído habilitado</label>
+                {{ (resource.includedIVA is empty)? 'No' : 'Si' }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label>Por defecto</label>
+                {{ (resource.defect is empty)? 'No' : 'Si' }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label>Habilitado</label>
+                {{ (resource.enabled is empty)? 'No' : 'Si' }}
+            </div>
+        </div>
+        <br>
+        <div class="cancel-button">
+            {% include '/Form/Buttons/_cancel.html.twig' with {'paths': {'cancel': path('GET_' ~ metadata.parameters.route.root ~ '_' ~  metadata.parameters.route.actions.list, configuration.vars.route.parameters|default({}))}} %}
+        </div>
+    </div>
+</div>

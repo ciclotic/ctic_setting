@@ -1,0 +1,63 @@
+{% import '/Form/theme.html.twig' as formTheme %}
+
+<div class="row">
+    <div class="col-md-12">
+        <form  name="{{ form.vars.name }}" method="{{ form.vars.method }}" action="{{ path('GET_' ~ metadata.parameters.route.root ~ '_' ~  metadata.parameters.route.actions.update, {'id': resource.id}) }}">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.name) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            {{ formTheme.form_row(form.children.styleTPV) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            {{ formTheme.form_row(form.children.numberTPVFamilyLines) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            {{ formTheme.form_row(form.children.numberTPVProductLines) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            {{ formTheme.form_row(form.children.enabledRoundDiscount) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-4">
+                            {{ formTheme.form_row(form.children.enabledTPVSound) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            {{ formTheme.form_row(form.children.enabledTPVAutomaticComplements) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.typeTPVPrint) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.typeClientName) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-buttons">
+                {% include '/Form/Buttons/_update.html.twig' with {'paths': {'cancel': path('dashboard', configuration.vars.route.parameters|default({}))}} %}
+            </div>
+        </form>
+    </div>
+</div>
