@@ -2,11 +2,13 @@
 namespace CTIC\App\Irpf\Domain;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\App\Irpf\Domain\Validation\IrpfValidation;
 use CTIC\App\Company\Domain\Company;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\App\Irpf\Infrastructure\Repository\IrpfRepository")
  */
 class Irpf implements IrpfInterface

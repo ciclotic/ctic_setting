@@ -2,11 +2,13 @@
 namespace CTIC\App\Bank\Domain;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\App\Bank\Domain\Validation\BankValidation;
 use CTIC\App\Company\Domain\Company;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\App\Bank\Infrastructure\Repository\BankRepository")
  */
 class Bank implements BankInterface

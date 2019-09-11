@@ -3,11 +3,13 @@ namespace CTIC\App\PaymentMethod\Domain;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\App\PaymentMethod\Domain\Validation\PaymentMethodValidation;
 use CTIC\App\Company\Domain\Company;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\App\PaymentMethod\Infrastructure\Repository\PaymentMethodRepository")
  */
 class PaymentMethod implements PaymentMethodInterface

@@ -2,11 +2,14 @@
 namespace CTIC\App\Company\Domain;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\App\Company\Domain\Validation\CompanyValidation;
+use CTIC\Warehouse\Warehouse\Domain\Warehouse;
 use CTIC\App\Account\Domain\Account;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\App\Company\Infrastructure\Repository\CompanyRepository")
  */
 class Company implements CompanyInterface
@@ -132,6 +135,13 @@ class Company implements CompanyInterface
      * @var bool
      */
     public $enabled;
+
+    /**
+     * @ORM\OneToMany(targetEntity="CTIC\Warehouse\Warehouse\Domain\Warehouse", mappedBy="company", cascade={"persist"})
+     *
+     * @var Warehouse[]
+     */
+    public $warehouses;
 
     /**
      * @return string

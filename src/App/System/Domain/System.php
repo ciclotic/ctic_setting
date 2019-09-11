@@ -2,10 +2,12 @@
 namespace CTIC\App\System\Domain;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\App\System\Domain\Validation\SystemValidation;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\App\System\Infrastructure\Repository\SystemRepository")
  */
 class System implements SystemInterface

@@ -3,11 +3,13 @@ namespace CTIC\App\User\Domain;
 
 use CTIC\App\Company\Domain\Company;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\App\User\Domain\Validation\UserValidation;
 use CTIC\App\Account\Domain\Account;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\App\User\Infrastructure\Repository\UserRepository")
  */
 class User implements UserInterface

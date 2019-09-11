@@ -2,10 +2,12 @@
 namespace CTIC\App\Permission\Domain;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\App\Permission\Domain\Validation\PermissionValidation;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\App\Permission\Infrastructure\Repository\PermissionRepository")
  */
 class Permission implements PermissionInterface

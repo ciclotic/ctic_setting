@@ -2,11 +2,13 @@
 namespace CTIC\App\Rate\Domain;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\App\Rate\Domain\Validation\RateValidation;
 use CTIC\App\Company\Domain\Company;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\App\Rate\Infrastructure\Repository\RateRepository")
  */
 class Rate implements RateInterface

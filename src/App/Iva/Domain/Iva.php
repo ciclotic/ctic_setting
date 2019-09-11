@@ -2,11 +2,13 @@
 namespace CTIC\App\Iva\Domain;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\App\Iva\Domain\Validation\IvaValidation;
 use CTIC\App\Company\Domain\Company;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\App\Iva\Infrastructure\Repository\IvaRepository")
  */
 class Iva implements IvaInterface

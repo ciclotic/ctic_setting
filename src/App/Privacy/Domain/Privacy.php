@@ -2,10 +2,12 @@
 namespace CTIC\App\Privacy\Domain;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\App\Privacy\Domain\Validation\PrivacyValidation;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\App\Privacy\Infrastructure\Repository\PrivacyRepository")
  */
 class Privacy implements PrivacyInterface

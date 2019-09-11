@@ -2,11 +2,13 @@
 namespace CTIC\App\RealizationArea\Domain;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\App\RealizationArea\Domain\Validation\RealizationAreaValidation;
 use CTIC\App\Company\Domain\Company;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\App\RealizationArea\Infrastructure\Repository\RealizationAreaRepository")
  */
 class RealizationArea implements RealizationAreaInterface

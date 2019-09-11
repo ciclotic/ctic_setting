@@ -8,6 +8,6 @@ trait CompanyValidation
 {
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
-        $metadata->addPropertyConstraint('name', new NotBlank());
+        $metadata->addPropertyConstraint('taxName', new NotBlank());
     }
 }

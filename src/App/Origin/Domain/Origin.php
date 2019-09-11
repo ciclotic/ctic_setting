@@ -2,11 +2,13 @@
 namespace CTIC\App\Origin\Domain;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\App\Origin\Domain\Validation\OriginValidation;
 use CTIC\App\Company\Domain\Company;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\App\Origin\Infrastructure\Repository\OriginRepository")
  */
 class Origin implements OriginInterface

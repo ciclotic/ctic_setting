@@ -7,7 +7,7 @@ trait IdentifiableTrait
 
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      *
      * @var int
