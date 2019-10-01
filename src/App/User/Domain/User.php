@@ -7,15 +7,23 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\App\User\Domain\Validation\UserValidation;
 use CTIC\App\Account\Domain\Account;
+use Symfony\Component\Security\Core\User\UserInterface as SymfonyUserInterface;
 
 /**
  * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\App\User\Infrastructure\Repository\UserRepository")
  */
-class User implements UserInterface
+class User implements UserInterface, SymfonyUserInterface
 {
     use IdentifiableTrait;
     use UserValidation;
+
+    const ROLES = array(
+        0 => 'ROLE_EMPLOYEE',
+        1 => 'ROLE_ADMIN',
+        2 => 'ROLE_USER',
+        3 => 'ROLE_EMPLOYEE'
+    );
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
@@ -23,6 +31,13 @@ class User implements UserInterface
      * @var string
      */
     public $name;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true, unique=true)
+     *
+     * @var string
+     */
+    public $username;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=false, options={"default" : "nc"})
@@ -147,5 +162,64 @@ class User implements UserInterface
     public function __toString()
     {
         return (string) $this->getId();
+    }
+
+    // SETTED TO USER SYMFONY INTERFACE
+
+    /**
+     * Returns the roles granted to the user.
+     *
+     *     public function getRoles()
+     *     {
+     *         return ['ROLE_USER'];
+     *     }
+     *
+     * Alternatively, the roles might be stored on a ``roles`` property,
+     * and populated in any number of different ways when the user object
+     * is created.
+     *
+     * @return (Role|string)[] The user roles
+     */
+    public function getRoles()
+    {
+        return array((empty($this::ROLES[$this->getPermission()]))? $this::ROLES[$this->getPermission()] : $this::ROLES[3]);
+    }
+
+    /**
+     * Returns the salt that was originally used to encode the password.
+     *
+     * This can return null if the password was not encoded using a salt.
+     *
+     * @return string|null The salt
+     */
+    public function getSalt()
+    {
+        return null;
+    }
+
+    /**
+     * Returns the username used to authenticate the user.
+     *
+     * @return string The username
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
+
+    /**
+     * Removes sensitive data from the user.
+     *
+     * This is important if, at any given point, sensitive information like
+     * the plain-text password is stored on this object.
+     */
+    public function eraseCredentials()
+    {
+        $this->password = '';
     }
 }

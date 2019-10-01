@@ -20,6 +20,11 @@ class UserCommand implements CommandInterface
     /**
      * @var string
      */
+    public $username;
+
+    /**
+     * @var string
+     */
     public $password;
 
     /**

@@ -22,6 +22,7 @@ class CreateUser implements CreateInterface
         $user = new User();
         $user->setId($command->id);
         $user->name = (empty($command->name))? '' : $command->name;
+        $user->username = (empty($command->username))? '' : $command->username;
         $user->enabled = (empty($command->enabled))? false : true;
         $user->password = md5($command->password);
         $user->permission = (empty($command->permission))? 3 : $command->permission;
