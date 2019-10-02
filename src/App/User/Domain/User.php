@@ -19,7 +19,7 @@ class User implements UserInterface, SymfonyUserInterface
     use UserValidation;
 
     const ROLES = array(
-        0 => 'ROLE_EMPLOYEE',
+        0 => 'ROLE_CUSTOMER',
         1 => 'ROLE_ADMIN',
         2 => 'ROLE_USER',
         3 => 'ROLE_EMPLOYEE'
@@ -75,6 +75,11 @@ class User implements UserInterface, SymfonyUserInterface
      * @var Account
      */
     private $account = null;
+
+    public function __construct($username)
+    {
+        $this->setUsername($username);
+    }
 
     /**
      * @return string
@@ -182,7 +187,7 @@ class User implements UserInterface, SymfonyUserInterface
      */
     public function getRoles()
     {
-        return array((empty($this::ROLES[$this->getPermission()]))? $this::ROLES[$this->getPermission()] : $this::ROLES[3]);
+        return array((empty($this::ROLES[$this->getPermission()]))? $this::ROLES[0] : $this::ROLES[$this->getPermission()]);
     }
 
     /**
